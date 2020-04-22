@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace lab2
 {
@@ -37,6 +40,7 @@ namespace lab2
         /// </param>
         public void Search(string searchingName)
         {
+            Trace.WriteLine("Проверка на соответствие");
             if (this.name.Contains(searchingName)) this.printInfo();            
         }
     }
@@ -57,6 +61,7 @@ namespace lab2
             this.name = name;
             this.address = address;
             this.phoneNumber = phoneNumber;
+            Trace.WriteLine("Создан экземпляр класса Person");
         }
 
         /// <summary>
@@ -98,6 +103,7 @@ namespace lab2
             this.phoneNumber = phoneNumber;
             this.fax = fax;
             this.contact = contact;
+            Trace.WriteLine("Создан экземпляр класса Organization");
         }
 
         public override void printInfo()
@@ -128,6 +134,7 @@ namespace lab2
                 this.address = address;
                 this.phoneNumber = phoneNumber;
                 this.birthDate = birthDate;
+                Trace.WriteLine("Создан экземпляр класса Friend");
             }
 
             public override void printInfo()
